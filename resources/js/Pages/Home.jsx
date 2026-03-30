@@ -1,8 +1,10 @@
 import React from "react";
 import { Head } from "@inertiajs/react";
 import Hero from "../Sections/Hero";
+import TopProducts from "../Sections/TopProducts";
 import WhatsAppButton from "../Components/Common/WhatsAppButton";
-import Navbar from "../Components/Common/Navbar";
+import Navbar from "../Components/Navbar";
+
 
 
 export default function Home() {
@@ -14,8 +16,10 @@ export default function Home() {
       
       <main>
         <Hero />
+        <TopProducts />
         {/* Konten lainnya bisa ditambahkan di sini */}
       </main>
+
 
       <WhatsAppButton />
     </>
