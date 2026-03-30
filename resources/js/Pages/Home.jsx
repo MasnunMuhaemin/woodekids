@@ -1,25 +1,24 @@
 import React from "react";
+import { Head } from "@inertiajs/react";
+import Hero from "../Sections/Hero";
+import WhatsAppButton from "../Components/Common/WhatsAppButton";
+import Navbar from "../Components/Common/Navbar";
+
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-tertiary flex items-center justify-center">
-      <div className="bg-white p-10 rounded-2xl shadow-xl text-center">
+    <>
+      <Head title="Woodekids - Mainan Kayu Edukasi" />
+      
+      <Navbar />
+      
+      <main>
+        <Hero />
+        {/* Konten lainnya bisa ditambahkan di sini */}
+      </main>
 
-        {/* Heading pakai Baloo 2 */}
-        <h1 className="text-primary text-4xl font-bold font-heading">
-          Mainan Kayu Anak
-        </h1>
-
-        {/* Body pakai Nunito */}
-        <p className="mt-3 text-gray-600 font-sans">
-          Aman, Edukatif & Menyenangkan untuk si kecil 👶
-        </p>
-
-        <button className="mt-6 bg-secondary text-white px-6 py-2 rounded-lg font-sans hover:opacity-90">
-          Beli Sekarang
-        </button>
-
-      </div>
-    </div>
+      <WhatsAppButton />
+    </>
   );
 }
+
