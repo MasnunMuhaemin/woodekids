@@ -8,4 +8,10 @@
 @theme {
     --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
         'Segoe UI Symbol', 'Noto Color Emoji';
+
+    /* 🎨 Custom Color dari Logo */
+    --color-primary: #5DA9E9;   /* biru */
+    --color-secondary: #E63946; /* merah */
+    --color-tertiary: #4CAF50;  /* hijau */
+    --color-accent: #F4C430;    /* kuning (opsional) */
 }
