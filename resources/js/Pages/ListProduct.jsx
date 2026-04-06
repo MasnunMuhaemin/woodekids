@@ -4,6 +4,7 @@ import Navbar from "../Components/Navbar";
 import Footer from "../Components/Footer";
 import ProductCard from "../Components/ProductCard";
 import WhatsAppButton from "../Components/Common/WhatsAppButton";
+import Breadcrumbs from "../Components/Common/Breadcrumbs";
 
 const categories = ["Semua", "Montessori", "Puzzle", "Balok Susun", "Alat Musik", "Seni & Lukis"];
 
@@ -100,6 +101,16 @@ export default function ListProduct() {
       <Navbar />
 
       <main className="pt-24 lg:pt-32 pb-20 bg-gray-50 min-h-screen">
+        
+        {/* Breadcrumbs */}
+        <div className="w-full px-6 md:px-12 lg:px-16 mb-8 lg:mb-12">
+            <Breadcrumbs 
+                items={[
+                    { label: "Home", href: "/" },
+                    { label: "Produk" }
+                ]}
+            />
+        </div>
         
         {/* Page Header */}
         <div className="w-full px-6 md:px-12 lg:px-16 mb-12">

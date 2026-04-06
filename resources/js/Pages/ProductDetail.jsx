@@ -4,6 +4,7 @@ import Navbar from "../Components/Navbar";
 import Footer from "../Components/Footer";
 import ProductCard from "../Components/ProductCard";
 import WhatsAppButton from "../Components/Common/WhatsAppButton";
+import Breadcrumbs from "../Components/Common/Breadcrumbs";
 
 const product = {
   id: 1,
@@ -47,15 +48,14 @@ export default function ProductDetail() {
 
       <main className="pt-24 lg:pt-32 pb-20 bg-white min-h-screen">
         
-        {/* Breadcrumbs */}
         <div className="w-full px-6 md:px-12 lg:px-16 mb-8 lg:mb-12">
-            <nav className="flex items-center gap-2 text-xs md:text-sm font-sans font-bold text-gray-400 uppercase tracking-widest">
-                <a href="/" className="hover:text-primary transition-colors">Home</a>
-                <span>/</span>
-                <a href="/products" className="hover:text-primary transition-colors">Produk</a>
-                <span>/</span>
-                <span className="text-gray-900">{product.category}</span>
-            </nav>
+            <Breadcrumbs 
+                items={[
+                    { label: "Home", href: "/" },
+                    { label: "Produk", href: "/products" },
+                    { label: product.category }
+                ]}
+            />
         </div>
 
         <div className="w-full px-6 md:px-12 lg:px-16">
