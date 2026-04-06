@@ -44,14 +44,16 @@ export default function Navbar() {
 
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center space-x-8">
-            {menuItems.map((item) => (
+            {menuItems.map((item, index) => (
               <a 
                 key={item.name} 
                 href={item.href}
-                className="text-white/90 hover:text-white font-sans text-sm font-medium tracking-wide transition-colors relative group py-2"
+                className="text-white/90 hover:text-white font-sans text-sm font-semibold tracking-wide transition-colors relative group py-2"
               >
                 {item.name}
-                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-accent group-hover:w-full transition-all duration-300"></span>
+                <span className={`absolute bottom-0 left-0 w-0 h-0.5 group-hover:w-full transition-all duration-300 ${
+                  index % 3 === 0 ? "bg-primary" : index % 3 === 1 ? "bg-secondary" : "bg-tertiary"
+                }`}></span>
               </a>
             ))}
           </div>

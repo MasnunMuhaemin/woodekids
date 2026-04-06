@@ -28,7 +28,11 @@ export default function Hero() {
         {/* CTA Button Area (Centered below subtext) */}
         <div className="mt-12 flex flex-col items-center">
           {/* The Horizontal Line from Reference */}
-          <div className="w-16 h-0.5 bg-primary/40 mb-8"></div>
+          <div className="flex gap-2 mb-8">
+            <div className="w-12 h-1 bg-primary/60 rounded-full"></div>
+            <div className="w-4 h-1 bg-secondary/60 rounded-full"></div>
+            <div className="w-2 h-1 bg-tertiary/60 rounded-full"></div>
+          </div>
           
           <a 
             href="#" 

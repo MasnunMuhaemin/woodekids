@@ -1,4 +1,4 @@
-@import 'tailwindcss';
+@import "tailwindcss";
 
 @source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
 @source '../../storage/framework/views/*.php';
@@ -6,28 +6,28 @@
 @source '../**/*.jsx';
 
 @theme {
-     /* Font */
-    --font-sans: 'Nunito', ui-sans-serif, system-ui, sans-serif;
-    --font-heading: 'Baloo 2', cursive;
+    /* Font */
+    --font-sans: "Nunito", ui-sans-serif, system-ui, sans-serif;
+    --font-heading: "Baloo 2", cursive;
 
     /* 🎨 Custom Color dari Logo */
-    --color-primary: #5DA9E9;   /* biru */
-    --color-secondary: #E63946; /* merah */
-    --color-tertiary: #4CAF50;  /* hijau */
-    --color-accent: #F4C430;    /* kuning (opsional) */
+    --color-primary: #5da9e9; /* biru */
+    --color-secondary: #e63946; /* merah */
+    --color-tertiary: #4caf50; /* hijau */
+    --color-accent: #f4c430; /* kuning (opsional) */
 }
 
 @keyframes fade-in-down {
-  0% {
-    opacity: 0;
-    transform: translateY(-20px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .animate-fade-in-down {
-  animation: fade-in-down 1.2s ease-out forwards;
+    animation: fade-in-down 1.2s ease-out forwards;
 }

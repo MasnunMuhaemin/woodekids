@@ -4,7 +4,7 @@ export default function About() {
   return (
     <section className="relative w-full overflow-hidden bg-white">
       {/* Full-width Container with Background Image */}
-      <div className="relative h-[650px] w-full overflow-hidden shadow-xl">
+      <div className="relative h-[600px] w-full overflow-hidden shadow-xl">
         
         {/* Background Image (Full Screen Width) */}
         <div className="absolute inset-0">
@@ -22,7 +22,8 @@ export default function About() {
           <div className="bg-white p-10 md:p-16 lg:p-20 rounded-[2.5rem] shadow-2xl max-w-2xl w-full relative border border-gray-100 -mt-8 md:-mt-12">
               {/* Top Playful Icon (Monkey) */}
               <div className="mb-6 relative w-fit">
-                <div className="absolute -top-4 -right-4 w-8 h-8 bg-accent/20 rounded-full blur-lg"></div>
+                <div className="absolute -top-4 -right-4 w-8 h-8 bg-secondary/20 rounded-full blur-lg animate-pulse"></div>
+                <div className="absolute -bottom-2 -left-2 w-12 h-12 bg-tertiary/10 rounded-full blur-xl"></div>
               </div>
               <h2 className="text-4xl md:text-5xl lg:text-5xl font-bold font-heading text-gray-900 leading-[1.1] mb-8">
                 The play room <br />
@@ -36,7 +37,7 @@ export default function About() {
               <div className="flex items-center gap-8 relative">
                 <a 
                   href="#" 
-                  className="group flex items-center gap-2 px-10 py-4 border-2 border-primary/20 rounded-full text-gray-800 font-sans font-bold hover:bg-primary hover:text-white hover:border-primary transition-all duration-300"
+                  className="group flex items-center gap-2 px-10 py-4 border-2 border-secondary/20 rounded-full text-gray-800 font-sans font-bold hover:bg-secondary hover:text-white hover:border-secondary transition-all duration-300"
                 >
                   Shop Now
                   <svg className="w-5 h-5 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">

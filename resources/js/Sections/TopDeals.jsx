@@ -12,7 +12,7 @@ export default function TopDeals() {
     price: "Rp 249.000",
     image: "/images/products/easel.png",
     badge: "40% Off",
-    badgeClass: "bg-red-500",
+    badgeClass: "bg-secondary",
     rating: 5,
     reviews: "1.2k"
   };
@@ -36,7 +36,7 @@ export default function TopDeals() {
       price: "Rp 189.000",
       image: "/images/products/blocks.png",
       badge: "New",
-      badgeClass: "bg-cyan-500",
+      badgeClass: "bg-primary",
       rating: 5,
       reviews: "72"
     },
@@ -47,7 +47,7 @@ export default function TopDeals() {
       price: "Rp 129.000",
       image: "/images/products/puzzle.png",
       badge: "10% Off",
-      badgeClass: "bg-red-500",
+      badgeClass: "bg-tertiary",
       rating: 4,
       reviews: "215"
     },
@@ -58,7 +58,7 @@ export default function TopDeals() {
       price: "Rp 169.000",
       image: "/images/products/train.png",
       badge: "15% Off",
-      badgeClass: "bg-red-500",
+      badgeClass: "bg-accent",
       rating: 5,
       reviews: "3.5k"
     }
