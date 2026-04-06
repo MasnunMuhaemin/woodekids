@@ -30,7 +30,7 @@ export default function About() {
                 needs an overhaul!
               </h2>
               <p className="text-lg text-gray-500 font-sans leading-relaxed mb-10">
-                Toys are scattered haphazardly, shelves are overflowing, and the 
+                Toys are scattered haphazardly, shelves are overflowing, and   the 
                 overall atmosphere lacks the creativity and functionality 
                 that a playroom should provide.
               </p>

@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "@inertiajs/react";
 
 const StarRating = ({ rating }) => {
   return (
@@ -17,37 +18,41 @@ export default function ProductCard({ product }) {
     <div className="group flex flex-col h-full bg-white rounded-3xl overflow-hidden transition-all duration-300">
       
       {/* Image & Badges Layer */}
-      <div className="relative aspect-square bg-white flex items-center justify-center p-0 mb-4 overflow-hidden rounded-3xl border border-gray-100">
-        {/* Badges */}
-        <div className="absolute top-4 left-4 z-10">
-          <span className={`${product.badgeClass} text-white px-3 py-1 rounded-md text-[10px] font-bold uppercase tracking-wider shadow-sm`}>
-            {product.badge}
-          </span>
+      <Link href="/product-detail">
+        <div className="relative aspect-square bg-white flex items-center justify-center p-0 mb-4 overflow-hidden rounded-3xl border border-gray-100">
+            {/* Badges */}
+            <div className="absolute top-4 left-4 z-10">
+            <span className={`${product.badgeClass} text-white px-3 py-1 rounded-md text-[10px] font-bold uppercase tracking-wider shadow-sm`}>
+                {product.badge}
+            </span>
+            </div>
+            <img 
+            src={product.image} 
+            alt={product.name} 
+            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+            />
         </div>
-        <img 
-          src={product.image} 
-          alt={product.name} 
-          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-        />
-      </div>
+      </Link>
 
       {/* Text Info */}
       <div className="flex-1 px-4 pb-6 flex flex-col bg-white">
-        <div className="flex flex-col gap-1 mb-2">
-          <h3 className="text-xl font-bold font-sans text-gray-900 group-hover:text-primary transition-colors mt-2">
-            {product.name}
-          </h3>
-          <p className="text-sm text-gray-500 leading-snug font-sans line-clamp-2">
-            {product.description}
-          </p>
-        </div>
+        <Link href="/product-detail">
+            <div className="flex flex-col gap-1 mb-2">
+            <h3 className="text-xl font-bold font-sans text-gray-900 group-hover:text-primary transition-colors mt-2">
+                {product.name}
+            </h3>
+            <p className="text-sm text-gray-500 leading-snug font-sans line-clamp-2">
+                {product.description}
+            </p>
+            </div>
+        </Link>
         
         {/* Stars & Reviews */}
         <div className="flex items-center gap-2 mb-4">
           <StarRating rating={product.rating} />
           <span className="text-xs text-gray-400 font-sans">({product.reviews})</span>
         </div>
-
+        
         {/* Price & Add to Cart */}
         <div className="mt-auto flex justify-between items-center bg-white">
           <span className="text-2xl font-black font-sans text-gray-900">

@@ -9,3 +9,7 @@ Route::get('/', function () {
 Route::get('/products', function () {
     return Inertia::render('ListProduct');
 });
+
+Route::get('/product-detail', function () {
+    return Inertia::render('ProductDetail');
+});
