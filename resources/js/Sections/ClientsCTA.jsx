@@ -1,117 +1,161 @@
 import React from "react";
 
 const clients = [
-  { name: "Client 1", color: "bg-[#5da9e9]", icon: "🚗" },
-  { name: "Client 2", color: "bg-[#e63946]", icon: "🚂" },
-  { name: "Client 3", color: "bg-[#4caf50]", icon: "👒" },
-  { name: "Client 4", color: "bg-[#f4c430]", icon: "⚡" },
-  { name: "Client 5", color: "bg-[#4A90E2]", icon: "👶" },
-  { name: "Client 6", color: "bg-[#FF6B6B]", icon: "🧸" },
-  { name: "Client 7", color: "bg-[#51DB79]", icon: "🌟" },
+    { name: "Client 1", color: "bg-[#5da9e9]", icon: "🚗" },
+    { name: "Client 2", color: "bg-[#e63946]", icon: "🚂" },
+    { name: "Client 3", color: "bg-[#4caf50]", icon: "👒" },
+    { name: "Client 4", color: "bg-[#f4c430]", icon: "⚡" },
+    { name: "Client 5", color: "bg-[#4A90E2]", icon: "👶" },
+    { name: "Client 6", color: "bg-[#FF6B6B]", icon: "🧸" },
+    { name: "Client 7", color: "bg-[#51DB79]", icon: "🌟" },
 ];
 
 export default function ClientsCTA() {
-  return (
-    <section className="relative w-full bg-white overflow-hidden">
-      
-      {/* Top spacing to give room for overlap if needed, or just regular content above */}
-      <div className="h-40 bg-white"></div>
+    return (
+        <section className="relative w-full bg-white overflow-hidden">
+            {/* Top spacing to give room for overlap if needed, or just regular content above */}
+            <div className="h-40 bg-white"></div>
 
-      {/* Blue CTA Section (The Base) */}
-      <div className="relative w-full bg-primary pt-64 pb-32 md:pb-48">
-        
-        {/* Our Client Box (Overlapping / "Numpang") */}
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[92%] max-w-[1440px]">
-            <div className="bg-white rounded-[3rem] p-12 md:p-20 shadow-2xl border border-gray-100 text-center">
-                <h2 className="text-3xl md:text-5xl font-bold font-heading text-gray-900 mb-12">
-                    Our Client
-                </h2>
-                
-                <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-6 md:gap-10 items-center justify-items-center">
-                    {clients.map((client, i) => (
-                        <div key={i} className="flex flex-col items-center group">
-                        <div className={`w-20 h-20 md:w-24 md:h-24 rounded-full ${client.color} flex items-center justify-center shadow-lg transition-all duration-500 group-hover:scale-110 mb-4 border-4 border-white`}>
-                            <span className="text-2xl md:text-3xl">{client.icon}</span>
+            {/* Blue CTA Section (The Base) */}
+            <div className="relative w-full bg-primary pt-64 pb-32 md:pb-48">
+                {/* Our Client Box (Overlapping / "Numpang") */}
+                <div className="absolute top-0 left-0 w-full -translate-y-1/2 px-6 md:px-12 lg:px-16">
+                    <div className="bg-white rounded-[3rem] p-12 md:p-20 shadow-2xl border border-gray-100 text-center">
+                        <h2 className="text-3xl md:text-5xl font-bold font-heading text-gray-900 mb-12">
+                            Our Client
+                        </h2>
+
+                        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-6 md:gap-10 items-center justify-items-center">
+                            {clients.map((client, i) => (
+                                <div
+                                    key={i}
+                                    className="flex flex-col items-center group"
+                                >
+                                    <div
+                                        className={`w-20 h-20 md:w-24 md:h-24 rounded-full ${client.color} flex items-center justify-center shadow-lg transition-all duration-500 group-hover:scale-110 mb-4 border-4 border-white`}
+                                    >
+                                        <span className="text-2xl md:text-3xl">
+                                            {client.icon}
+                                        </span>
+                                    </div>
+                                    <p className="font-sans font-bold text-gray-800 text-xs md:text-sm tracking-wide">
+                                        {client.name}
+                                    </p>
+                                </div>
+                            ))}
                         </div>
-                        <p className="font-sans font-bold text-gray-800 text-xs md:text-sm tracking-wide">
-                            {client.name}
-                        </p>
+
+                        {/* Pagination Dots */}
+                        <div className="flex justify-center gap-2 mt-12">
+                            <div className="w-2.5 h-2.5 rounded-full bg-secondary"></div>
+                            <div className="w-2.5 h-2.5 rounded-full bg-gray-200"></div>
+                            <div className="w-2.5 h-2.5 rounded-full bg-gray-200"></div>
                         </div>
-                    ))}
+                    </div>
                 </div>
 
-                {/* Pagination Dots */}
-                <div className="flex justify-center gap-2 mt-12">
-                    <div className="w-2.5 h-2.5 rounded-full bg-secondary"></div>
-                    <div className="w-2.5 h-2.5 rounded-full bg-gray-200"></div>
-                    <div className="w-2.5 h-2.5 rounded-full bg-gray-200"></div>
+                {/* Floating Decorations (Inside/On Blue) */}
+                <div className="absolute left-10 top-40 w-24 h-24 text-white opacity-20 animate-bounce pointer-events-none hidden md:block">
+                    <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="1"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        className="w-full h-full"
+                    >
+                        <path d="M17.8 19.2L16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.2c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z" />
+                    </svg>
+                </div>
+                <div className="absolute right-10 top-60 w-24 h-24 text-white opacity-20 animate-pulse pointer-events-none hidden md:block">
+                    <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="1"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        className="w-full h-full"
+                    >
+                        <circle cx="12" cy="12" r="3" />
+                        <path d="M12 16.5A4.5 4.5 0 117.5 12 4.5 4.5 0 0112 7.5 4.5 4.5 0 1116.5 12 4.5 4.5 0 0112 16.5z" />
+                        <path d="M12 7.5V2" />
+                        <path d="M12 22v-5.5" />
+                        <path d="M16.5 12H22" />
+                        <path d="M22 12h-5.5" />
+                        <path d="M2 12h5.5" />
+                        <path d="M7.5 12H2" />
+                        <path d="M12 16.5V22" />
+                        <path d="M12 2v5.5" />
+                    </svg>
+                </div>
+
+                {/* CTA Content */}
+                <div className="w-full px-6 md:px-12 lg:px-16 text-center">
+                    <div className="inline-block px-6 py-2 bg-white/20 backdrop-blur-sm rounded-full mb-8">
+                        <p className="text-[10px] md:text-xs font-sans font-bold text-white uppercase tracking-[0.3em]">
+                            Wujudkan Imajinasi Buah Hati Anda & Mari Bergabung
+                            Bersama Keluarga Besar Woodekids
+                        </p>
+                    </div>
+
+                    <h2 className="text-3xl md:text-5xl font-bold font-heading text-white mb-6 leading-tight drop-shadow-md">
+                        Siap Menghadirkan Senyum dan Keceriaan Abadi di Rumah
+                        Anda? <br />
+                        <span className="text-accent underline decoration-accent/30 decoration-4 underline-offset-8">
+                            Konsultasi & Pesan Produk Kustom Eksklusif Sekarang
+                        </span>
+                    </h2>
+
+                    <p className="max-w-4xl mx-auto text-white/90 text-base md:text-lg mb-12 font-sans leading-relaxed">
+                        Dapatkan koleksi mainan edukasi kayu premium yang
+                        dirancang secara artistik dan ergonomis dengan penuh
+                        cinta serta presisi tinggi demi mendukung setiap fase
+                        tumbuh kembang buah hati Anda secara optimal dan
+                        menyenangkan. Woodekids dengan bangga membuka ruang
+                        konsultasi seluas-luasnya bagi para orang tua yang ingin
+                        mewujudkan desain mainan impian yang tidak hanya aman
+                        bagi anak, namun juga memiliki standar kualitas tinggi,
+                        tahan lama, dan tentunya diproduksi menggunakan
+                        bahan-bahan alami yang ramah lingkungan, seluruhnya
+                        disesuaikan secara personal menurut segala keinginan
+                        unik keluarga Anda.
+                    </p>
+
+                    <div className="flex flex-col items-center">
+                        <a
+                            href="https://wa.me/yournumber"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="group relative flex items-center justify-center gap-3 px-10 py-5 bg-accent text-gray-900 rounded-full font-sans font-bold text-xl shadow-[0_20px_40px_-10px_rgba(0,0,0,0.2)] transition-all duration-300 hover:scale-105 hover:bg-accent/90 active:scale-95 overflow-hidden"
+                        >
+                            <span>Pesan di WhatsApp</span>
+                            <div className="p-1.5 bg-black/10 rounded-full">
+                                <svg
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    strokeWidth="3"
+                                    strokeLinecap="round"
+                                    strokeLinejoin="round"
+                                    className="w-5 h-5 transition-transform group-hover:translate-x-1"
+                                >
+                                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                                    <polyline points="12 5 19 12 12 19"></polyline>
+                                </svg>
+                            </div>
+                        </a>
+                        <p className="text-xs text-white/50 mt-8 font-sans font-medium flex items-center gap-4">
+                            <span>Konsultasi Gratis</span>
+                            <span className="w-1 h-1 rounded-full bg-white/20"></span>
+                            <span>Proses Cepat</span>
+                            <span className="w-1 h-1 rounded-full bg-white/20"></span>
+                            <span>Kualitas Terjamin</span>
+                        </p>
+                    </div>
                 </div>
             </div>
-        </div>
-
-        {/* Floating Decorations (Inside/On Blue) */}
-        <div className="absolute left-10 top-40 w-24 h-24 text-white opacity-20 animate-bounce pointer-events-none hidden md:block">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round" className="w-full h-full">
-                <path d="M17.8 19.2L16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.2c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z" />
-            </svg>
-        </div>
-        <div className="absolute right-10 top-60 w-24 h-24 text-white opacity-20 animate-pulse pointer-events-none hidden md:block">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round" className="w-full h-full">
-                <circle cx="12" cy="12" r="3" />
-                <path d="M12 16.5A4.5 4.5 0 117.5 12 4.5 4.5 0 0112 7.5 4.5 4.5 0 1116.5 12 4.5 4.5 0 0112 16.5z" />
-                <path d="M12 7.5V2" /><path d="M12 22v-5.5" /><path d="M16.5 12H22" /><path d="M22 12h-5.5" /><path d="M2 12h5.5" /><path d="M7.5 12H2" /><path d="M12 16.5V22" /><path d="M12 2v5.5" />
-            </svg>
-        </div>
-
-        {/* CTA Content */}
-        <div className="max-w-4xl mx-auto px-6 text-center">
-          <div className="inline-block px-6 py-2 bg-white/20 backdrop-blur-sm rounded-full mb-8">
-            <p className="text-[10px] md:text-xs font-sans font-bold text-white uppercase tracking-[0.3em]">
-              Wujudkan Imajinasi Buah Hati Anda & Mari Bergabung Bersama Keluarga Besar Woodekids
-            </p>
-          </div>
-          
-          <h2 className="text-3xl md:text-5xl font-bold font-heading text-white mb-6 leading-tight drop-shadow-md">
-            Siap Menghadirkan Senyum dan Keceriaan Abadi di Rumah Anda? <br /> 
-            <span className="text-accent underline decoration-accent/30 decoration-4 underline-offset-8">
-              Konsultasi & Pesan Produk Kustom Eksklusif Sekarang
-            </span>
-          </h2>
-          
-          <p className="max-w-4xl mx-auto text-white/90 text-base md:text-lg mb-12 font-sans leading-relaxed">
-            Dapatkan koleksi mainan edukasi kayu premium yang dirancang secara artistik dan ergonomis dengan penuh cinta serta presisi tinggi demi mendukung setiap fase tumbuh kembang buah hati Anda secara optimal dan menyenangkan. 
-            Woodekids dengan bangga membuka ruang konsultasi seluas-luasnya bagi para orang tua yang ingin mewujudkan desain mainan impian yang tidak hanya aman bagi anak, 
-            namun juga memiliki standar kualitas tinggi, tahan lama, dan tentunya diproduksi menggunakan bahan-bahan alami yang ramah lingkungan, 
-            seluruhnya disesuaikan secara personal menurut segala keinginan unik keluarga Anda.
-          </p>
-
-          <div className="flex flex-col items-center">
-            <a 
-              href="https://wa.me/yournumber" 
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group relative flex items-center justify-center gap-3 px-10 py-5 bg-accent text-gray-900 rounded-full font-sans font-bold text-xl shadow-[0_20px_40px_-10px_rgba(0,0,0,0.2)] transition-all duration-300 hover:scale-105 hover:bg-accent/90 active:scale-95 overflow-hidden"
-            >
-              <span>Pesan di WhatsApp</span>
-              <div className="p-1.5 bg-black/10 rounded-full">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5 transition-transform group-hover:translate-x-1">
-                      <line x1="5" y1="12" x2="19" y2="12"></line>
-                      <polyline points="12 5 19 12 12 19"></polyline>
-                  </svg>
-              </div>
-            </a>
-            <p className="text-xs text-white/50 mt-8 font-sans font-medium flex items-center gap-4">
-              <span>Konsultasi Gratis</span>
-              <span className="w-1 h-1 rounded-full bg-white/20"></span>
-              <span>Proses Cepat</span>
-              <span className="w-1 h-1 rounded-full bg-white/20"></span>
-              <span>Kualitas Terjamin</span>
-            </p>
-          </div>
-        </div>
-
-      </div>
-
-    </section>
-  );
+        </section>
+    );
 }

@@ -8,27 +8,26 @@ import ClientsCTA from "../Sections/ClientsCTA";
 
 import WhatsAppButton from "../Components/Common/WhatsAppButton";
 import Navbar from "../Components/Navbar";
-
-
+import Footer from "../Components/Footer";
 
 export default function Home() {
-  return (
-    <>
-      <Head title="Woodekids - Mainan Kayu Edukasi" />
-      
-      <Navbar />
-      
-      <main>
-        <Hero />
-        <TopProducts />
-        <About />
-        <TopDeals />
-        <ClientsCTA />
-        {/* Konten lainnya bisa ditambahkan di sini */}
-      </main>
+    return (
+        <>
+            <Head title="Woodekids - Mainan Kayu Edukasi" />
 
+            <Navbar />
 
-      <WhatsAppButton />
-    </>
-  );
+            <main>
+                <Hero />
+                <TopProducts />
+                <About />
+                <TopDeals />
+                <ClientsCTA />
+                {/* Konten lainnya bisa ditambahkan di sini */}
+            </main>
+
+            <Footer />
+            <WhatsAppButton />
+        </>
+    );
 }
