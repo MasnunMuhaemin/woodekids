@@ -59,7 +59,7 @@ export default function TopProducts() {
             Most popular toys
           </h2>
           <a 
-            href="#" 
+            href="/products" 
             className="group flex items-center gap-2 px-8 py-3 border-2 border-primary/20 rounded-full text-gray-800 font-sans font-bold hover:border-primary hover:bg-white transition-all duration-300 shadow-sm hover:shadow-md"
           >
             Explore More

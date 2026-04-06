@@ -14,8 +14,8 @@ export default function Navbar() {
   }, []);
 
   const menuItems = [
-    { name: "Tentang", href: "#" },
-    { name: "Produk", href: "#" },
+    { name: "Tentang", href: "/" },
+    { name: "Produk", href: "/products" },
     { name: "Karya", href: "#" },
     { name: "Layanan", href: "#" },
     { name: "Artikel", href: "#" },
