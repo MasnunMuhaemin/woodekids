@@ -1,0 +1,100 @@
+<?php
+
+namespace App\Filament\Resources;
+
+use App\Filament\Resources\ProductResource\Pages;
+use App\Filament\Resources\ProductResource\RelationManagers;
+use App\Models\Product;
+use Filament\Forms;
+use Filament\Forms\Form;
+use Filament\Resources\Resource;
+use Filament\Tables;
+use Filament\Tables\Table;
+use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\SoftDeletingScope;
+use Filament\Forms\Components\TextInput;
+use Filament\Forms\Components\Select;
+use Filament\Forms\Components\Textarea;
+use Filament\Tables\Columns\TextColumn;
+
+class ProductResource extends Resource
+{
+    protected static ?string $model = Product::class;
+
+    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+
+    public static function form(Form $form): Form
+    {
+        return $form
+            ->schema([
+            TextInput::make('name')
+                ->label('Nama Produk')
+                ->required(),
+
+            Select::make('type_id')
+                ->relationship('type', 'name')
+                ->label('Type')
+                ->required(),
+
+            Select::make('category_id')
+                ->relationship('category', 'name')
+                ->label('Category')
+                ->required(),
+
+            Select::make('additionalItems')
+                ->relationship('additionalItems', 'name')
+                ->multiple()
+                ->label('Additional Item'),
+
+            Textarea::make('description')
+                ->label('Deskripsi')
+                ->rows(3),
+            ]);
+    }
+
+    public static function table(Table $table): Table
+    {
+        return $table
+            ->columns([
+            TextColumn::make('name')
+                ->searchable(),
+
+            TextColumn::make('type.name')
+                ->label('Type'),
+
+            TextColumn::make('category.name')
+                ->label('Category'),
+
+            TextColumn::make('created_at')
+                ->dateTime()
+                ->label('Dibuat'),
+            ])
+            ->filters([
+                //
+            ])
+            ->actions([
+                Tables\Actions\EditAction::make(),
+            ])
+            ->bulkActions([
+                Tables\Actions\BulkActionGroup::make([
+                    Tables\Actions\DeleteBulkAction::make(),
+                ]),
+            ]);
+    }
+
+    public static function getRelations(): array
+    {
+        return [
+            //
+        ];
+    }
+
+    public static function getPages(): array
+    {
+        return [
+            'index' => Pages\ListProducts::route('/'),
+            'create' => Pages\CreateProduct::route('/create'),
+            'edit' => Pages\EditProduct::route('/{record}/edit'),
+        ];
+    }
+}
