@@ -15,7 +15,9 @@ use Illuminate\Database\Eloquent\SoftDeletingScope;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\Textarea;
+use Filament\Forms\Components\FileUpload;
 use Filament\Tables\Columns\TextColumn;
+use Filament\Tables\Columns\ImageColumn;
 
 class ProductResource extends Resource
 {
@@ -33,18 +35,35 @@ class ProductResource extends Resource
 
             Select::make('type_id')
                 ->relationship('type', 'name')
-                ->label('Type')
+                ->label('Tipe')
+                ->searchable()
+                ->preload()
                 ->required(),
 
             Select::make('category_id')
                 ->relationship('category', 'name')
-                ->label('Category')
+                ->label('Kategori')
+                ->searchable()
+                ->preload()
                 ->required(),
 
             Select::make('additionalItems')
                 ->relationship('additionalItems', 'name')
                 ->multiple()
-                ->label('Additional Item'),
+                ->label('Item Tambahan')
+                ->searchable()
+                ->preload(),
+
+            FileUpload::make('image')
+                ->label('Foto Produk')
+                ->image()
+                ->imageEditor()
+                ->directory('products')
+                ->disk('public')
+                ->visibility('public')
+                ->acceptedFileTypes(['image/jpeg', 'image/png', 'image/jpg', 'image/webp'])
+                ->maxSize(2048)
+                ->required(),
 
             Textarea::make('description')
                 ->label('Deskripsi')
@@ -56,18 +75,28 @@ class ProductResource extends Resource
     {
         return $table
             ->columns([
-            TextColumn::make('name')
-                ->searchable(),
+                ImageColumn::make('image')
+                    ->label('Foto'),
 
-            TextColumn::make('type.name')
-                ->label('Type'),
+                TextColumn::make('name')
+                    ->label('Nama')
+                    ->searchable(),
 
-            TextColumn::make('category.name')
-                ->label('Category'),
+                TextColumn::make('type.name')
+                    ->label('Tipe'),
 
-            TextColumn::make('created_at')
-                ->dateTime()
-                ->label('Dibuat'),
+                TextColumn::make('category.name')
+                    ->label('Kategori'),
+
+                TextColumn::make('created_at')
+                    ->label('Dibuat Pada')
+                    ->dateTime()
+                    ->sortable(),
+                TextColumn::make('updated_at')
+                    ->label('Diperbarui Pada')
+                    ->dateTime()
+                    ->sortable()
+                    ->toggleable(isToggledHiddenByDefault: true),
             ])
             ->filters([
                 //
