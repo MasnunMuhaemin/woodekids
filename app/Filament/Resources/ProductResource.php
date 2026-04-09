@@ -19,6 +19,10 @@ use Filament\Forms\Components\FileUpload;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Columns\ImageColumn;
 
+use Illuminate\Support\Str;
+use Filament\Forms\Get;
+use Filament\Forms\Set;
+
 class ProductResource extends Resource
 {
     protected static ?string $model = Product::class;
@@ -31,7 +35,14 @@ class ProductResource extends Resource
             ->schema([
             TextInput::make('name')
                 ->label('Nama Produk')
-                ->required(),
+                ->required()
+                ->live(onBlur: true)
+                ->afterStateUpdated(fn (Set $set, ?string $state) => $set('slug', Str::slug($state))),
+
+            TextInput::make('slug')
+                ->label('Slug')
+                ->required()
+                ->unique(Product::class, 'slug', ignoreRecord: true),
 
             Select::make('type_id')
                 ->relationship('type', 'name')
