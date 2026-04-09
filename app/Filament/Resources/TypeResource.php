@@ -27,7 +27,8 @@ class TypeResource extends Resource
             ->schema([
                 TextInput::make('name')
                 ->label('Nama Tipe')
-                ->required(),
+                ->required()
+                ->helperText('Masukkan tipe produk (contoh: Kecil, Sedang, Besar).'),
             ]);
     }
 
@@ -43,10 +44,9 @@ class TypeResource extends Resource
                     ->dateTime()
                     ->sortable(),
                 TextColumn::make('updated_at')
-                    ->label('Diperbarui Pada')
+                    ->label('Diperbaharui Pada')
                     ->dateTime()
-                    ->sortable()
-                    ->toggleable(isToggledHiddenByDefault: true),
+                    ->sortable(),
             ])
             ->filters([
                 //

@@ -27,7 +27,8 @@ class AdditionalItemResource extends Resource
             ->schema([
                 TextInput::make('name')
                 ->label('Nama Item Tambahan')
-                ->required(),
+                ->required()
+                ->helperText('Masukkan nama item tambahan yang tersedia.'),
             ]);
     }
 
@@ -43,10 +44,9 @@ class AdditionalItemResource extends Resource
                     ->dateTime()
                     ->sortable(),
                 TextColumn::make('updated_at')
-                    ->label('Diperbarui Pada')
+                    ->label('Diperbaharui Pada')
                     ->dateTime()
-                    ->sortable()
-                    ->toggleable(isToggledHiddenByDefault: true),
+                    ->sortable(),
             ])
             ->filters([
                 //

@@ -27,7 +27,8 @@ class CategoryResource extends Resource
             ->schema([
                 TextInput::make('name')
                 ->label('Nama Kategori')
-                ->required(),
+                ->required()
+                ->helperText('Masukkan nama kategori produk (contoh: Mainan Kayu, Dekorasi).'),
             ]);
     }
 
@@ -43,10 +44,9 @@ class CategoryResource extends Resource
                     ->dateTime()
                     ->sortable(),
                 TextColumn::make('updated_at')
-                    ->label('Diperbarui Pada')
+                    ->label('Diperbaharui Pada')
                     ->dateTime()
-                    ->sortable()
-                    ->toggleable(isToggledHiddenByDefault: true),
+                    ->sortable(),
             ])
             ->filters([
                 //

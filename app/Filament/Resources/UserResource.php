@@ -29,18 +29,21 @@ class UserResource extends Resource
         return $form
             ->schema([
                 TextInput::make('name')
-                ->required(),
+                ->required()
+                ->helperText('Masukkan nama lengkap pengguna.'),
 
                 TextInput::make('email')
                     ->email()
                     ->required()
-                    ->unique(ignoreRecord: true),
+                    ->unique(ignoreRecord: true)
+                    ->helperText('Masukkan alamat email aktif yang unik.'),
 
                 TextInput::make('password')
                     ->password()
                     ->required(fn ($livewire) => $livewire instanceof \Filament\Resources\Pages\CreateRecord)
                     ->dehydrated(fn ($state) => filled($state))
-                    ->dehydrateStateUsing(fn ($state) => Hash::make($state)),
+                    ->dehydrateStateUsing(fn ($state) => Hash::make($state))
+                    ->helperText('Kosongkan jika tidak ingin mengubah kata sandi.'),
             ]);
     }
 
@@ -60,10 +63,9 @@ class UserResource extends Resource
                     ->dateTime()
                     ->sortable(),
                 TextColumn::make('updated_at')
-                    ->label('Diperbarui Pada')
+                    ->label('Diperbaharui Pada')
                     ->dateTime()
-                    ->sortable()
-                    ->toggleable(isToggledHiddenByDefault: true),
+                    ->sortable(),
             ])
             ->filters([
                 //
