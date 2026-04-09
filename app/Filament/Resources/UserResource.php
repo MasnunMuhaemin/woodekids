@@ -40,6 +40,7 @@ class UserResource extends Resource
 
                 TextInput::make('password')
                     ->password()
+                    ->revealable()
                     ->required(fn ($livewire) => $livewire instanceof \Filament\Resources\Pages\CreateRecord)
                     ->dehydrated(fn ($state) => filled($state))
                     ->dehydrateStateUsing(fn ($state) => Hash::make($state))
