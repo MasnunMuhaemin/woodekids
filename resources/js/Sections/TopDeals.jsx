@@ -70,17 +70,17 @@ export default function TopDeals() {
         
         {/* Header */}
         <div className="mb-12">
-          <h2 className="text-4xl md:text-5xl font-bold font-heading text-gray-900 mb-8">
+          <h2 className="text-3xl md:text-4xl font-bold font-heading text-gray-900 mb-8">
             Top deals just for you today
           </h2>
           
           {/* Tabs */}
-          <div className="flex flex-wrap gap-3 overflow-x-auto pb-4 no-scrollbar">
+          <div className="flex flex-nowrap md:flex-wrap items-center gap-2 md:gap-3 overflow-x-auto pb-6 no-scrollbar px-1">
             {categories.map((tab) => (
               <button
                 key={tab}
                 onClick={() => setActiveTab(tab)}
-                className={`px-6 py-2.5 rounded-full text-sm font-semibold transition-all duration-300 border ${
+                className={`px-4 py-1.5 md:px-6 md:py-2.5 rounded-full text-xs md:text-sm font-semibold transition-all duration-300 border whitespace-nowrap ${
                   activeTab === tab 
                   ? "bg-primary text-white border-primary shadow-lg shadow-primary/20 scale-105" 
                   : "bg-white text-gray-500 border-gray-200 hover:border-primary/50 hover:text-primary"

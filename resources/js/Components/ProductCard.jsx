@@ -38,28 +38,28 @@ export default function ProductCard({ product }) {
       <div className="flex-1 px-4 pb-6 flex flex-col bg-white">
         <Link href="/product-detail">
             <div className="flex flex-col gap-1 mb-2">
-            <h3 className="text-xl font-bold font-sans text-gray-900 group-hover:text-primary transition-colors mt-2">
+            <h3 className="text-sm md:text-lg font-bold font-sans text-gray-900 group-hover:text-primary transition-colors mt-2 line-clamp-1">
                 {product.name}
             </h3>
-            <p className="text-sm text-gray-500 leading-snug font-sans line-clamp-2">
+            <p className="text-[10px] md:text-sm text-gray-500 leading-snug font-sans line-clamp-2">
                 {product.description}
             </p>
             </div>
         </Link>
         
         {/* Stars & Reviews */}
-        <div className="flex items-center gap-2 mb-4">
+        <div className="flex items-center gap-1 md:gap-2 mb-4">
           <StarRating rating={product.rating} />
-          <span className="text-xs text-gray-400 font-sans">({product.reviews})</span>
+          <span className="text-[10px] md:text-xs text-gray-400 font-sans">({product.reviews})</span>
         </div>
         
         {/* Price & Add to Cart */}
-        <div className="mt-auto flex justify-between items-center bg-white">
-          <span className="text-2xl font-black font-sans text-gray-900">
+        <div className="mt-auto flex justify-between items-center bg-white gap-2">
+          <span className="text-sm md:text-base lg:text-xl font-black font-sans text-gray-900 whitespace-nowrap">
             {product.price}
           </span>
-          <button className="w-10 h-10 border border-gray-200 rounded-full flex items-center justify-center text-gray-800 hover:bg-primary hover:text-white hover:border-primary transition-all shadow-sm hover:shadow-lg hover:shadow-primary/20">
-            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <button className="w-8 h-8 md:w-10 md:h-10 border border-gray-200 rounded-full flex items-center justify-center text-gray-800 hover:bg-primary hover:text-white hover:border-primary transition-all shadow-sm hover:shadow-lg hover:shadow-primary/20 shrink-0">
+            <svg className="w-3.5 h-3.5 md:w-4 md:h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
             </svg>
           </button>

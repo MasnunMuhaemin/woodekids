@@ -21,7 +21,7 @@ export default function ClientsCTA() {
                 {/* Our Client Box (Overlapping / "Numpang") */}
                 <div className="absolute top-0 left-0 w-full -translate-y-1/2 px-4 md:px-12 lg:px-16 z-20">
                     <div className="bg-white rounded-[2.5rem] md:rounded-[3rem] p-8 md:p-16 shadow-[0_-10px_50px_-15px_rgba(0,0,0,0.05),0_40px_100px_-20px_rgba(0,0,0,0.2)] border border-gray-100/50 text-center">
-                        <h2 className="text-3xl md:text-5xl font-bold font-heading text-gray-900 mb-8 md:mb-12">
+                        <h2 className="text-2xl md:text-4xl font-bold font-heading text-gray-900 mb-8 md:mb-12">
                             Our Client
                         </h2>
 
@@ -32,9 +32,9 @@ export default function ClientsCTA() {
                                     className="flex flex-col items-center group cursor-pointer"
                                 >
                                     <div
-                                        className={`w-16 h-16 md:w-20 md:h-20 lg:w-24 lg:h-24 rounded-full ${client.color} flex items-center justify-center shadow-lg transition-all duration-500 group-hover:scale-110 mb-4 border-4 border-white`}
+                                        className={`w-14 h-14 md:w-16 md:h-16 lg:w-20 lg:h-20 rounded-full ${client.color} flex items-center justify-center shadow-lg transition-all duration-500 group-hover:scale-110 mb-4 border-4 border-white`}
                                     >
-                                        <span className="text-xl md:text-2xl lg:text-3xl">
+                                        <span className="text-lg md:text-xl lg:text-2xl">
                                             {client.icon}
                                         </span>
                                     </div>
@@ -100,7 +100,7 @@ export default function ClientsCTA() {
                         </p>
                     </div>
 
-                    <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold font-heading text-white mb-8 leading-[1.2] drop-shadow-xl">
+                    <h2 className="text-2xl md:text-4xl lg:text-5xl font-bold font-heading text-white mb-8 leading-[1.2] drop-shadow-xl">
                         Siap Menghadirkan Senyum dan Keceriaan Abadi di Rumah
                         Anda? <br className="hidden md:block" />
                         <span className="text-accent underline decoration-accent/30 decoration-4 underline-offset-8">
@@ -108,7 +108,7 @@ export default function ClientsCTA() {
                         </span>
                     </h2>
 
-                    <p className="max-w-4xl mx-auto text-white/80 text-base md:text-lg mb-12 font-sans leading-relaxed px-2 md:px-0">
+                    <p className="max-w-4xl mx-auto text-white/80 text-xs md:text-base mb-12 font-sans leading-relaxed px-2 md:px-0">
                         Dapatkan koleksi mainan edukasi kayu premium yang
                         dirancang secara artistik dan ergonomis dengan penuh
                         cinta serta presisi tinggi demi mendukung setiap fase
@@ -128,10 +128,10 @@ export default function ClientsCTA() {
                             href="https://wa.me/yournumber"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="group relative flex items-center justify-center gap-3 px-10 py-5 bg-accent text-gray-900 rounded-full font-sans font-bold text-xl shadow-[0_20px_40px_-10px_rgba(0,0,0,0.2)] transition-all duration-300 hover:scale-105 hover:bg-accent/90 active:scale-95 overflow-hidden"
+                            className="group relative flex items-center justify-center gap-3 px-6 py-3.5 md:px-10 md:py-5 bg-accent text-gray-900 rounded-full font-sans font-bold text-base md:text-xl shadow-[0_20px_40px_-10px_rgba(0,0,0,0.2)] transition-all duration-300 hover:scale-105 hover:bg-accent/90 active:scale-95 overflow-hidden"
                         >
                             <span>Pesan di WhatsApp</span>
-                            <div className="p-1.5 bg-black/10 rounded-full">
+                            <div className="p-1 md:p-1.5 bg-black/10 rounded-full">
                                 <svg
                                     viewBox="0 0 24 24"
                                     fill="none"
@@ -139,7 +139,7 @@ export default function ClientsCTA() {
                                     strokeWidth="3"
                                     strokeLinecap="round"
                                     strokeLinejoin="round"
-                                    className="w-5 h-5 transition-transform group-hover:translate-x-1"
+                                    className="w-4 h-4 md:w-5 md:h-5 transition-transform group-hover:translate-x-1"
                                 >
                                     <line x1="5" y1="12" x2="19" y2="12"></line>
                                     <polyline points="12 5 19 12 12 19"></polyline>
