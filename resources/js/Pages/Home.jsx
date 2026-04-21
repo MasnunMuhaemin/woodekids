@@ -22,8 +22,8 @@ export default function Home() {
                 <div id="hero"><Hero /></div>
                 <div id="produk"><TopProducts /></div>
                 <div id="tentang"><About /></div>
-                <TopDeals />
-                <ClientsCTA />
+                <div id="promo"><TopDeals /></div>
+                <div id="klien"><ClientsCTA /></div>
                 <div id="kontak"><Contact /></div>
                 {/* Konten lainnya bisa ditambahkan di sini */}
             </main>

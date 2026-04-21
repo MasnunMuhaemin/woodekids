@@ -1,9 +1,12 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "@inertiajs/react";
+import { Link, usePage } from "@inertiajs/react";
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const { url } = usePage();
+
+  const isHomePage = url === "/" || url.startsWith("/#");
 
   useEffect(() => {
     const handleScroll = () => {
@@ -14,15 +17,17 @@ export default function Navbar() {
   }, []);
 
   const menuItems = [
-    { name: "Tentang", href: "/#tentang" },
     { name: "Produk", href: "/#produk" },
+    { name: "Tentang", href: "/#tentang" },
+    { name: "Promo", href: "/#promo" },
+    { name: "Klien", href: "/#klien" },
     { name: "Kontak", href: "/#kontak" },
   ];
 
   return (
     <nav 
       className={`fixed top-0 w-full z-50 transition-all duration-500 ${
-        isScrolled || isMobileMenuOpen ? "bg-black/80 backdrop-blur-md py-4 shadow-lg" : "bg-transparent py-6"
+        isScrolled || isMobileMenuOpen || !isHomePage ? "bg-black/80 backdrop-blur-md py-4 shadow-lg" : "bg-transparent py-6"
       }`}
     >
       <div className="w-full px-6 md:px-12 lg:px-16">
