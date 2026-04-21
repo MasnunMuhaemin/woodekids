@@ -18,11 +18,11 @@ export default function Home() {
             <Navbar />
 
             <main>
-                <Hero />
-                <TopProducts />
-                <About />
+                <div id="hero"><Hero /></div>
+                <div id="produk"><TopProducts /></div>
+                <div id="tentang"><About /></div>
                 <TopDeals />
-                <ClientsCTA />
+                <div id="kontak"><ClientsCTA /></div>
                 {/* Konten lainnya bisa ditambahkan di sini */}
             </main>
 

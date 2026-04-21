@@ -14,18 +14,15 @@ export default function Navbar() {
   }, []);
 
   const menuItems = [
-    { name: "Tentang", href: "/" },
-    { name: "Produk", href: "/products" },
-    { name: "Karya", href: "#" },
-    { name: "Layanan", href: "#" },
-    { name: "Artikel", href: "#" },
-    { name: "Kontak", href: "#" },
+    { name: "Tentang", href: "/#tentang" },
+    { name: "Produk", href: "/#produk" },
+    { name: "Kontak", href: "/#kontak" },
   ];
 
   return (
     <nav 
       className={`fixed top-0 w-full z-50 transition-all duration-500 ${
-        isScrolled ? "bg-black/80 backdrop-blur-md py-4 shadow-lg" : "bg-transparent py-6"
+        isScrolled || isMobileMenuOpen ? "bg-black/80 backdrop-blur-md py-4 shadow-lg" : "bg-transparent py-6"
       }`}
     >
       <div className="w-full px-6 md:px-12 lg:px-16">
@@ -83,7 +80,7 @@ export default function Navbar() {
 
       {/* Mobile Menu Overlay */}
       <div 
-        className={`md:hidden absolute top-full left-0 w-full bg-black/95 transition-all duration-300 overflow-hidden ${
+        className={`md:hidden absolute top-full left-0 w-full bg-black/80 backdrop-blur-lg transition-all duration-300 overflow-hidden ${
           isMobileMenuOpen ? "max-h-screen border-t border-white/10" : "max-h-0"
         }`}
       >
