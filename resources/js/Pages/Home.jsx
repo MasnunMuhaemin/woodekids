@@ -5,6 +5,7 @@ import TopProducts from "../Sections/TopProducts";
 import About from "../Sections/About";
 import TopDeals from "../Sections/TopDeals";
 import ClientsCTA from "../Sections/ClientsCTA";
+import Contact from "../Sections/Contact";
 
 import WhatsAppButton from "../Components/Common/WhatsAppButton";
 import Navbar from "../Components/Navbar";
@@ -22,7 +23,8 @@ export default function Home() {
                 <div id="produk"><TopProducts /></div>
                 <div id="tentang"><About /></div>
                 <TopDeals />
-                <div id="kontak"><ClientsCTA /></div>
+                <ClientsCTA />
+                <div id="kontak"><Contact /></div>
                 {/* Konten lainnya bisa ditambahkan di sini */}
             </main>
 
