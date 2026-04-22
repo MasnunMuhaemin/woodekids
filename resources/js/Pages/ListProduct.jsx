@@ -65,7 +65,7 @@ const initialProducts = [
     description: "Kenalkan melodi pertama dengan alat musik kayu berkualitas tinggi.",
     price: "Rp 249.000",
     image: "/images/products/guitar.png",
-    badge: "Hot Buy",
+    badge: "Paling Laris",
     badgeClass: "bg-secondary",
     rating: 5,
     reviews: "1.2k"
@@ -77,7 +77,7 @@ const initialProducts = [
       description: "Papan tulis dua sisi (kapur & magnetik) untuk asah kreativitas anak.",
       price: "Rp 325.000",
       image: "/images/products/board.png",
-      badge: "Best Value",
+      badge: "Kualitas Terbaik",
       badgeClass: "bg-tertiary",
       rating: 5,
       reviews: "928"
@@ -106,7 +106,7 @@ export default function ListProduct() {
         <div className="w-full px-6 md:px-12 lg:px-16 mb-8 lg:mb-12">
             <Breadcrumbs 
                 items={[
-                    { label: "Home", href: "/" },
+                    { label: "Beranda", href: "/" },
                     { label: "Produk" }
                 ]}
             />

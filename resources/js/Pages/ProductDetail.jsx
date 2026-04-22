@@ -51,7 +51,7 @@ export default function ProductDetail() {
         <div className="w-full px-6 md:px-12 lg:px-16 mb-8 lg:mb-12">
             <Breadcrumbs 
                 items={[
-                    { label: "Home", href: "/" },
+                    { label: "Beranda", href: "/" },
                     { label: "Produk", href: "/products" },
                     { label: product.category }
                 ]}
@@ -149,7 +149,7 @@ export default function ProductDetail() {
                 <div className="flex border-b border-gray-100 mb-8 md:mb-12 overflow-x-auto no-scrollbar">
                     <button className="px-6 md:px-8 py-3 md:py-4 border-b-4 border-primary text-gray-900 font-black font-heading text-sm md:text-lg uppercase tracking-widest whitespace-nowrap">Deskripsi</button>
                     <button className="px-6 md:px-8 py-3 md:py-4 text-gray-400 hover:text-gray-900 font-black font-heading text-sm md:text-lg uppercase tracking-widest transition-colors whitespace-nowrap">Informasi Tambahan</button>
-                    <button className="px-6 md:px-8 py-3 md:py-4 text-gray-400 hover:text-gray-900 font-black font-heading text-sm md:text-lg uppercase tracking-widest transition-colors whitespace-nowrap">Reviews</button>
+                    <button className="px-6 md:px-8 py-3 md:py-4 text-gray-400 hover:text-gray-900 font-black font-heading text-sm md:text-lg uppercase tracking-widest transition-colors whitespace-nowrap">Ulasan</button>
                 </div>
                 <div className="max-w-4xl text-sm md:text-lg text-gray-500 font-sans leading-relaxed md:leading-loose whitespace-pre-line">
                     {product.fullDescription}

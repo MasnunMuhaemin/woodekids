@@ -26,20 +26,19 @@ export default function About() {
                 <div className="absolute -bottom-2 -left-2 w-12 h-12 bg-tertiary/10 rounded-full blur-xl"></div>
               </div>
               <h2 className="text-3xl md:text-4xl lg:text-4xl font-bold font-heading text-gray-900 leading-[1.1] mb-8">
-                The play room <br />
-                needs an overhaul!
+                Ruang bermain <br />
+                butuh suasana baru?
               </h2>
               <p className="text-sm md:text-base text-gray-500 font-sans leading-relaxed mb-10">
-                Toys are scattered haphazardly, shelves are overflowing, and   the 
-                overall atmosphere lacks the creativity and functionality 
-                that a playroom should provide.
+                Mainan berserakan, rak penuh sesak, dan suasana terasa kurang kreatif? 
+                Berikan sentuhan edukatif yang rapi dan artistik untuk si kecil dengan koleksi terbaik kami.
               </p>
               <div className="flex items-center gap-8 relative">
                 <a 
-                  href="#" 
+                  href="/products" 
                   className="group flex items-center gap-2 px-6 py-3 md:px-10 md:py-4 border-2 border-secondary/20 rounded-full text-gray-800 font-sans font-bold text-sm md:text-base hover:bg-secondary hover:text-white hover:border-secondary transition-all duration-300"
                 >
-                  Shop Now
+                  Belanja Sekarang
                   <svg className="w-4 h-4 md:w-5 md:h-5 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                   </svg>

@@ -1,13 +1,13 @@
 import React from "react";
 
 const clients = [
-    { name: "Client 1", color: "bg-[#5da9e9]", icon: "🚗" },
-    { name: "Client 2", color: "bg-[#e63946]", icon: "🚂" },
-    { name: "Client 3", color: "bg-[#4caf50]", icon: "👒" },
-    { name: "Client 4", color: "bg-[#f4c430]", icon: "⚡" },
-    { name: "Client 5", color: "bg-[#4A90E2]", icon: "👶" },
-    { name: "Client 6", color: "bg-[#FF6B6B]", icon: "🧸" },
-    { name: "Client 7", color: "bg-[#51DB79]", icon: "🌟" },
+    { name: "Klien 1", color: "bg-[#5da9e9]", icon: "🚗" },
+    { name: "Klien 2", color: "bg-[#e63946]", icon: "🚂" },
+    { name: "Klien 3", color: "bg-[#4caf50]", icon: "👒" },
+    { name: "Klien 4", color: "bg-[#f4c430]", icon: "⚡" },
+    { name: "Klien 5", color: "bg-[#4A90E2]", icon: "👶" },
+    { name: "Klien 6", color: "bg-[#FF6B6B]", icon: "🧸" },
+    { name: "Klien 7", color: "bg-[#51DB79]", icon: "🌟" },
 ];
 
 export default function ClientsCTA() {
@@ -22,7 +22,7 @@ export default function ClientsCTA() {
                 <div className="absolute top-0 left-0 w-full -translate-y-1/2 px-4 md:px-12 lg:px-16 z-20">
                     <div className="bg-white rounded-[2.5rem] md:rounded-[3rem] p-8 md:p-16 shadow-[0_-10px_50px_-15px_rgba(0,0,0,0.05),0_40px_100px_-20px_rgba(0,0,0,0.2)] border border-gray-100/50 text-center">
                         <h2 className="text-2xl md:text-4xl font-bold font-heading text-gray-900 mb-8 md:mb-12">
-                            Our Client
+                            Klien Kami
                         </h2>
 
                         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7 gap-6 md:gap-10 items-center justify-items-center">

@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import ProductCard from "../Components/ProductCard";
 
 export default function TopDeals() {
-  const categories = ["All Product", "Key Chains", "Plush toys", "All Sets", "Accessories", "Lunch Boxes", "Easter Gifts"];
-  const [activeTab, setActiveTab] = useState("All Product");
+  const categories = ["Semua Produk", "Gantungan Kunci", "Boneka Plush", "Set Lengkap", "Aksesoris", "Kotak Makan", "Hadiah Spesial"];
+  const [activeTab, setActiveTab] = useState("Semua Produk");
 
   const mainProduct = {
     id: 1,
@@ -11,7 +11,7 @@ export default function TopDeals() {
     description: "Papan lukis dua sisi yang sempurna untuk menunjang kreativitas si kecil dalam menggambar dan menulis.",
     price: "Rp 249.000",
     image: "/images/products/easel.png",
-    badge: "40% Off",
+    badge: "Diskon 40%",
     badgeClass: "bg-secondary",
     rating: 5,
     reviews: "1.2k"
@@ -24,7 +24,7 @@ export default function TopDeals() {
       description: "Mainan kayu edukatif warna ceria.",
       price: "Rp 149.000",
       image: "/images/products/rainbow.png",
-      badge: "10% Off",
+      badge: "Diskon 10%",
       badgeClass: "bg-red-500",
       rating: 5,
       reviews: "409"
@@ -35,7 +35,7 @@ export default function TopDeals() {
       description: "Belajar huruf dengan balok kayu.",
       price: "Rp 189.000",
       image: "/images/products/blocks.png",
-      badge: "New",
+      badge: "Terbaru",
       badgeClass: "bg-primary",
       rating: 5,
       reviews: "72"
@@ -46,7 +46,7 @@ export default function TopDeals() {
       description: "Teka-teki kayu berkualitas tinggi.",
       price: "Rp 129.000",
       image: "/images/products/puzzle.png",
-      badge: "10% Off",
+      badge: "Diskon 10%",
       badgeClass: "bg-tertiary",
       rating: 4,
       reviews: "215"
@@ -57,7 +57,7 @@ export default function TopDeals() {
       description: "Mainan kereta tarik kayu klasik.",
       price: "Rp 169.000",
       image: "/images/products/train.png",
-      badge: "15% Off",
+      badge: "Diskon 15%",
       badgeClass: "bg-accent",
       rating: 5,
       reviews: "3.5k"
@@ -71,7 +71,7 @@ export default function TopDeals() {
         {/* Header */}
         <div className="mb-12">
           <h2 className="text-3xl md:text-4xl font-bold font-heading text-gray-900 mb-8">
-            Top deals just for you today
+            Penawaran Terbaik Hari Ini
           </h2>
           
           {/* Tabs */}

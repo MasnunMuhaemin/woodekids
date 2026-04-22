@@ -19,8 +19,8 @@ export default function Contact() {
             <div className="flex items-center gap-4">
                 <div className="w-12 h-12 bg-accent rounded-full flex items-center justify-center text-2xl">🧸</div>
                 <div>
-                    <p className="text-xs font-black text-gray-400 uppercase tracking-widest">Handmade with</p>
-                    <p className="text-lg font-bold text-gray-900 font-heading">Love & Care</p>
+                    <p className="text-xs font-black text-gray-400 uppercase tracking-widest">Dibuat Dengan</p>
+                    <p className="text-lg font-bold text-gray-900 font-heading">Kasih Sayang</p>
                 </div>
             </div>
         </div>
@@ -71,7 +71,7 @@ export default function Contact() {
                 </svg>
               </div>
               <div>
-                <h4 className="text-[10px] font-black text-gray-400 uppercase tracking-widest mb-0.5">Workshop</h4>
+                <h4 className="text-[10px] font-black text-gray-400 uppercase tracking-widest mb-0.5">Workshop Kami</h4>
                 <p className="text-base font-bold text-gray-600 font-sans leading-snug">
                   Jl. Pendidikan No. 123, Kota Kreatif, <br className="hidden md:block" /> Indonesia 12345
                 </p>
