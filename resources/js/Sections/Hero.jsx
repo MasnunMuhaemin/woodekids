@@ -35,7 +35,7 @@ export default function Hero() {
           </div>
           
           <a 
-            href="#" 
+            href="#produk" 
             className="inline-flex items-center px-6 py-3 md:px-10 md:py-4 bg-transparent border-2 border-primary/50 text-white rounded-full font-sans font-semibold text-sm md:text-lg tracking-widest hover:bg-primary hover:text-white hover:scale-105 transition-all duration-300 ease-in-out shadow-[0_0_20px_-5px_rgba(93,169,233,0.5)]"
           >
             AYO KEMON !
