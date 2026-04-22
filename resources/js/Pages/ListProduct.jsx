@@ -65,7 +65,7 @@ const initialProducts = [
     description: "Kenalkan melodi pertama dengan alat musik kayu berkualitas tinggi.",
     price: "Rp 249.000",
     image: "/images/products/guitar.png",
-    badge: "Hot Buy",
+    badge: "Paling Laris",
     badgeClass: "bg-secondary",
     rating: 5,
     reviews: "1.2k"
@@ -77,7 +77,7 @@ const initialProducts = [
       description: "Papan tulis dua sisi (kapur & magnetik) untuk asah kreativitas anak.",
       price: "Rp 325.000",
       image: "/images/products/board.png",
-      badge: "Best Value",
+      badge: "Kualitas Terbaik",
       badgeClass: "bg-tertiary",
       rating: 5,
       reviews: "928"
@@ -106,7 +106,7 @@ export default function ListProduct() {
         <div className="w-full px-6 md:px-12 lg:px-16 mb-8 lg:mb-12">
             <Breadcrumbs 
                 items={[
-                    { label: "Home", href: "/" },
+                    { label: "Beranda", href: "/" },
                     { label: "Produk" }
                 ]}
             />
@@ -116,10 +116,10 @@ export default function ListProduct() {
         <div className="w-full px-6 md:px-12 lg:px-16 mb-12">
             <div className="flex flex-col md:flex-row justify-between items-end gap-6 border-b border-gray-200 pb-12">
                 <div>
-                   <h1 className="text-4xl md:text-6xl font-black font-heading tracking-tight text-gray-900 mb-4">
+                   <h1 className="text-3xl md:text-5xl font-black font-heading tracking-tight text-gray-900 mb-4">
                      Koleksi <span className="text-primary italic">Terlengkap</span>
                    </h1>
-                   <p className="text-gray-500 font-sans text-lg max-w-xl leading-relaxed">
+                   <p className="text-gray-500 font-sans text-sm md:text-lg max-w-xl leading-relaxed">
                      Temukan berbagai pilihan mainan kayu edukatif berkualitas premium yang dirancang khusus untuk mendukung tumbuh kembang anak Anda.
                    </p>
                 </div>
@@ -131,9 +131,9 @@ export default function ListProduct() {
                        placeholder="Cari mainan impian..."
                        value={searchQuery}
                        onChange={(e) => setSearchQuery(e.target.value)}
-                       className="w-full pl-12 pr-6 py-4 bg-white rounded-2xl border-none shadow-sm focus:ring-2 focus:ring-primary/20 font-sans font-medium transition-all group-hover:shadow-md"
+                       className="w-full pl-10 md:pl-12 pr-6 py-3 md:py-4 bg-white rounded-2xl border-none shadow-sm focus:ring-2 focus:ring-primary/20 font-sans text-sm md:text-base font-medium transition-all group-hover:shadow-md"
                     />
-                    <svg className="absolute left-4 top-1/2 -translate-y-1/2 w-6 h-6 text-gray-400 group-focus-within:text-primary transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 md:w-6 md:h-6 text-gray-400 group-focus-within:text-primary transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
                     </svg>
                 </div>
@@ -146,17 +146,17 @@ export default function ListProduct() {
                 {/* Sidebar Filter (Desktop) */}
                 <aside className="w-full lg:w-64 shrink-0">
                     <div className="sticky top-32">
-                        <h4 className="text-xl font-black font-heading text-gray-900 mb-8 uppercase tracking-widest">
+                        <h4 className="text-lg md:text-xl font-black font-heading text-gray-900 mb-6 md:mb-8 uppercase tracking-widest">
                             Kategori
                         </h4>
-                        <div className="flex flex-wrap lg:flex-col gap-3">
+                        <div className="flex flex-wrap lg:flex-col gap-2 md:gap-3">
                             {categories.map((cat) => (
                                 <button
                                     key={cat}
                                     onClick={() => setActiveCategory(cat)}
-                                    className={`px-6 py-3 rounded-xl font-sans font-bold text-sm text-left transition-all ${
+                                    className={`px-4 py-2 md:px-6 md:py-3 rounded-xl font-sans font-bold text-xs md:text-sm text-left transition-all ${
                                         activeCategory === cat 
-                                        ? "bg-primary text-white shadow-lg shadow-primary/20 translate-x-2" 
+                                        ? "bg-primary text-white shadow-lg shadow-primary/20 lg:translate-x-2" 
                                         : "bg-white text-gray-500 hover:bg-gray-100 hover:text-gray-900"
                                     }`}
                                 >
@@ -166,20 +166,20 @@ export default function ListProduct() {
                         </div>
 
                         {/* Banner Promo WhatsApp */}
-                        <div className="mt-12 p-8 bg-primary rounded-[2rem] text-white overflow-hidden relative group hidden lg:block shadow-xl shadow-primary/20">
+                        <div className="mt-8 md:mt-12 p-6 md:p-8 bg-primary rounded-[2rem] text-white overflow-hidden relative group hidden lg:block shadow-xl shadow-primary/20">
                             <div className="relative z-10">
-                                <span className="text-[9px] font-black uppercase tracking-[0.2em] bg-white/20 px-3 py-1 rounded-full mb-6 inline-block">Layanan Khusus</span>
-                                <h5 className="text-2xl font-black font-heading mb-4 leading-tight">Sulit Memilih Mainan Yang Tepat?</h5>
-                                <p className="text-xs font-sans font-medium text-white/80 mb-8 leading-relaxed">
+                                <span className="text-[8px] md:text-[9px] font-black uppercase tracking-[0.2em] bg-white/20 px-3 py-1 rounded-full mb-4 md:mb-6 inline-block">Layanan Khusus</span>
+                                <h5 className="text-xl md:text-2xl font-black font-heading mb-3 md:mb-4 leading-tight">Sulit Memilih Mainan Yang Tepat?</h5>
+                                <p className="text-[10px] md:text-xs font-sans font-medium text-white/80 mb-6 md:mb-8 leading-relaxed">
                                     Konsultasi gratis dengan admin kami untuk menemukan mainan terbaik sesuai usia & minat buah hati Anda!
                                 </p>
                                 <a 
                                     href="https://wa.me/yournumber"
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="flex items-center justify-center gap-2 px-6 py-3 bg-accent text-gray-900 text-xs font-black rounded-xl hover:bg-white hover:scale-105 transition-all duration-300 uppercase tracking-widest shadow-lg shadow-accent/10"
+                                    className="flex items-center justify-center gap-2 px-4 py-2.5 md:px-6 md:py-3 bg-accent text-gray-900 text-[10px] md:text-xs font-black rounded-xl hover:bg-white hover:scale-105 transition-all duration-300 uppercase tracking-widest shadow-lg shadow-accent/10"
                                 >
-                                    <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
+                                    <svg className="w-3.5 h-3.5 md:w-4 h-4 fill-current" viewBox="0 0 24 24">
                                         <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L0 24l6.335-1.662c1.72.937 3.659 1.432 5.631 1.433h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
                                     </svg>
                                     Chat Sekarang
