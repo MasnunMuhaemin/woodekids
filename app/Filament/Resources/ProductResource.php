@@ -70,6 +70,13 @@ class ProductResource extends Resource
                 ->preload()
                 ->helperText('Pilih item tambahan jika produk menyediakannya.'),
 
+            TextInput::make('price')
+                ->label('Harga')
+                ->required()
+                ->numeric()
+                ->prefix('Rp')
+                ->helperText('Masukkan harga tanpa desimal. Contoh: 150000'),
+
             FileUpload::make('image')
                 ->label('Foto Produk')
                 ->image()
@@ -99,6 +106,11 @@ class ProductResource extends Resource
                 TextColumn::make('name')
                     ->label('Nama')
                     ->searchable(),
+
+                TextColumn::make('price')
+                    ->label('Harga')
+                    ->formatStateUsing(fn ($state) => 'Rp ' . number_format($state, 0, ',', '.'))
+                    ->sortable(),
 
                 TextColumn::make('type.name')
                     ->label('Tipe'),

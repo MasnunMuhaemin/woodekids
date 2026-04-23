@@ -15,8 +15,13 @@ class Product extends Model
         'type_id',
         'category_id',
         'slug',
+        'price',
         'description',
         'image',
+    ];
+
+    protected $casts = [
+        'price' => 'decimal:0',
     ];
 
     public function type()
