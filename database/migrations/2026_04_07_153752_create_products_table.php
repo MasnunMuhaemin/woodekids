@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('slug')->unique();
             $table->decimal('price', 12, 0);
             $table->boolean('is_popular')->default(false);
+            $table->decimal('rating', 2, 1)->default(0);
             $table->text('description')->nullable();
             $table->string('image')->nullable();
             $table->timestamps();

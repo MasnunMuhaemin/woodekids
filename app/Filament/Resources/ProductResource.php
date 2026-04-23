@@ -19,6 +19,7 @@ use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\Toggle;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Columns\ImageColumn;
+use Filament\Forms\Components\Rating;
 
 use Illuminate\Support\Str;
 use Filament\Forms\Get;
@@ -83,8 +84,18 @@ class ProductResource extends Resource
                 ->default(false)
                 ->helperText('Aktifkan jika produk ini ingin ditampilkan sebagai populer'),
 
+            Select::make('rating')
+                ->options([
+                    1 => '⭐',
+                    2 => '⭐⭐',
+                    3 => '⭐⭐⭐',
+                    4 => '⭐⭐⭐⭐',
+                    5 => '⭐⭐⭐⭐⭐',
+                ])
+                ->required(),
+
             FileUpload::make('image')
-                ->label('Foto Produk')
+                ->label('FotoProduk')
                 ->image()
                 ->imageEditor()
                 ->directory('products')
@@ -123,6 +134,13 @@ class ProductResource extends Resource
                     ->badge()
                     ->formatStateUsing(fn ($state) => $state ? 'Populer' : 'Tidak')
                     ->color(fn ($state) => $state ? 'success' : 'gray'),
+
+                TextColumn::make('rating')
+                    ->label('Rating')
+                    ->html()
+                    ->formatStateUsing(function ($state) {
+                        return str_repeat('⭐', (int) $state);
+                    }),
 
                 TextColumn::make('type.name')
                     ->label('Tipe'),

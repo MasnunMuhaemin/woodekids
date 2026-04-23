@@ -17,6 +17,7 @@ class Product extends Model
         'slug',
         'price',
         'is_popular',
+        'rating',
         'description',
         'image',
     ];
@@ -24,6 +25,7 @@ class Product extends Model
     protected $casts = [
         'price' => 'decimal:0',
         'is_popular' => 'boolean',
+        'rating' => 'decimal:1',
     ];
 
     public function type()
