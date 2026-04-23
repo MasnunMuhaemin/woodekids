@@ -16,12 +16,14 @@ class Product extends Model
         'category_id',
         'slug',
         'price',
+        'is_popular',
         'description',
         'image',
     ];
 
     protected $casts = [
         'price' => 'decimal:0',
+        'is_popular' => 'boolean',
     ];
 
     public function type()

@@ -16,6 +16,7 @@ use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\FileUpload;
+use Filament\Forms\Components\Toggle;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Columns\ImageColumn;
 
@@ -77,6 +78,11 @@ class ProductResource extends Resource
                 ->prefix('Rp')
                 ->helperText('Masukkan harga tanpa desimal. Contoh: 150000'),
 
+            Toggle::make('is_popular')
+                ->label('Produk Populer')
+                ->default(false)
+                ->helperText('Aktifkan jika produk ini ingin ditampilkan sebagai populer'),
+
             FileUpload::make('image')
                 ->label('Foto Produk')
                 ->image()
@@ -111,6 +117,12 @@ class ProductResource extends Resource
                     ->label('Harga')
                     ->formatStateUsing(fn ($state) => 'Rp ' . number_format($state, 0, ',', '.'))
                     ->sortable(),
+
+                TextColumn::make('is_popular')
+                    ->label('Populer')
+                    ->badge()
+                    ->formatStateUsing(fn ($state) => $state ? 'Populer' : 'Tidak')
+                    ->color(fn ($state) => $state ? 'success' : 'gray'),
 
                 TextColumn::make('type.name')
                     ->label('Tipe'),

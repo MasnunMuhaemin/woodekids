@@ -18,6 +18,7 @@ return new class extends Migration
             $table->foreignId('category_id')->constrained()->cascadeOnDelete();
             $table->string('slug')->unique();
             $table->decimal('price', 12, 0);
+            $table->boolean('is_popular')->default(false);
             $table->text('description')->nullable();
             $table->string('image')->nullable();
             $table->timestamps();
