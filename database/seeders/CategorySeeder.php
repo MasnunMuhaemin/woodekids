@@ -14,9 +14,9 @@ class CategorySeeder extends Seeder
     public function run()
     {
         Category::insert([
-            ['name' => 'Series A'],
-            ['name' => 'Series B'],
-            ['name' => 'Series C'],
+            ['name' => 'Series A', 'slug' => 'series-a'],
+            ['name' => 'Series B', 'slug' => 'series-b'],
+            ['name' => 'Series C', 'slug' => 'series-c'],
         ]);
     }
 }

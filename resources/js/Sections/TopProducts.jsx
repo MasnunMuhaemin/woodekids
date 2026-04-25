@@ -1,59 +1,13 @@
 import React from "react";
 import ProductCard from "../Components/ProductCard";
 
-export default function TopProducts() {
-  const products = [
-    {
-      id: 1,
-      name: "Pelangi Montessori",
-      description: "Mainan kayu edukatif untuk melatih motorik halus dan pengenalan warna.",
-      price: "Rp 149.000",
-      image: "/images/products/rainbow.png",
-      badge: "Diskon 10%",
-      badgeClass: "bg-secondary",
-      rating: 5,
-      reviews: "9.5k"
-    },
-    {
-      id: 2,
-      name: "Abjad & Angka Kayu",
-      description: "Balok susun huruf dan angka untuk dasar belajar membaca dan berhitung.",
-      price: "Rp 189.000",
-      image: "/images/products/blocks.png",
-      badge: "Eksklusif",
-      badgeClass: "bg-primary",
-      rating: 5,
-      reviews: "7.9k"
-    },
-    {
-      id: 3,
-      name: "Puzzle Hewan",
-      description: "Meningkatkan kemampuan memecahkan masalah melalui dekorasi kayu.",
-      price: "Rp 129.000",
-      image: "/images/products/puzzle.png",
-      badge: "Terbaru",
-      badgeClass: "bg-tertiary",
-      rating: 4,
-      reviews: "472"
-    },
-    {
-      id: 4,
-      name: "Kereta Kayu Ceria",
-      description: "Mainan kereta tarik kayu yang ceria dan tahan lama untuk petualangan si kecil.",
-      price: "Rp 169.000",
-      image: "/images/products/train.png",
-      badge: "Eksklusif",
-      badgeClass: "bg-accent",
-      rating: 5,
-      reviews: "4.2k"
-    }
-  ];
+export default function TopProducts({ products = [] }) {
+
+  const isEmpty = !products || products.length === 0;
 
   return (
     <section className="py-20 bg-white">
       <div className="w-full px-6 md:px-12 lg:px-16 mx-auto">
-        
-        {/* Section Header */}
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-12 gap-6">
           <h2 className="text-3xl md:text-4xl font-bold font-heading text-gray-900 tracking-tight">
             Mainan Terpopuler
@@ -73,16 +27,35 @@ export default function TopProducts() {
             </svg>
           </a>
         </div>
-
-        {/* Product Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-          {products.map((product) => (
-            <ProductCard key={product.id} product={product} />
-          ))}
-        </div>
+        {isEmpty ? (
+          <div className="text-center py-20">
+            <p className="text-gray-500 text-lg">
+              Belum ada produk populer saat ini 😢
+            </p>
+          </div>
+        ) : (
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+            {products.map((product) => (
+              <ProductCard
+                key={product.id}
+                product={{
+                  id: product.id,
+                  name: product.name || "Produk tanpa nama",
+                  description: product.description,
+                  price: product.price,
+                  image: product.image
+                    ? `/storage/${product.image}`
+                    : "/images/no-image.png",
+                  badge: "Populer",
+                  badgeClass: "bg-primary",
+                  rating: product.rating ?? 0,
+                }}
+              />
+            ))}
+          </div>
+        )}
 
       </div>
     </section>
   );
 }
-

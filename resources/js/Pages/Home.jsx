@@ -11,23 +11,32 @@ import WhatsAppButton from "../Components/Common/WhatsAppButton";
 import Navbar from "../Components/Navbar";
 import Footer from "../Components/Footer";
 
-export default function Home() {
+export default function Home({ 
+    popularProducts, 
+    dealProducts, 
+    categories, 
+    activeCategory 
+}) {
     return (
         <>
             <Head title="Woodekids - Mainan Kayu Edukasi" />
-
             <Navbar />
-
             <main>
                 <div id="hero"><Hero /></div>
-                <div id="produk"><TopProducts /></div>
+                <div id="produk">
+                    <TopProducts products={popularProducts} />
+                </div>
                 <div id="tentang"><About /></div>
-                <div id="promo"><TopDeals /></div>
+                <div id="promo">
+                    <TopDeals 
+                        products={dealProducts}
+                        categories={categories}
+                        activeCategory={activeCategory}
+                    />
+                </div>
                 <div id="klien"><ClientsCTA /></div>
                 <div id="kontak"><Contact /></div>
-                {/* Konten lainnya bisa ditambahkan di sini */}
             </main>
-
             <Footer />
             <WhatsAppButton />
         </>
