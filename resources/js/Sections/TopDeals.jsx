@@ -57,9 +57,6 @@ export default function TopDeals({
               key={products[0].id} 
               product={{
                 ...products[0],
-                image: products[0].image
-                  ? `/storage/${products[0].image}`
-                  : "/images/no-image.png",
                 badge: "Diskon",
                 badgeClass: "bg-secondary"
               }} 
@@ -69,9 +66,6 @@ export default function TopDeals({
                 key={product.id}
                 product={{
                   ...product,
-                  image: product.image
-                    ? `/storage/${product.image}`
-                    : "/images/no-image.png",
                   badge: "Promo",
                   badgeClass: "bg-primary"
                 }}

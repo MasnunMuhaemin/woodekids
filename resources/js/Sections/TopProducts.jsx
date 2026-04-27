@@ -40,17 +40,9 @@ export default function TopProducts({ products = [] }) {
               <ProductCard
                 key={product.id}
                 product={{
-                  id: product.id,
-                  slug: product.slug, // ✅ penting untuk detail
-                  name: product.name || "Produk tanpa nama",
-                  description: product.description,
-                  price: product.price,
-                  image: product.image
-                    ? `/storage/${product.image}`
-                    : "/images/no-image.png",
+                  ...product,
                   badge: "Populer",
                   badgeClass: "bg-primary",
-                  rating: product.rating ?? 0,
                 }}
               />
             ))}

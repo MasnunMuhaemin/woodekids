@@ -12,13 +12,13 @@ class HomeController extends Controller
     public function index(Request $request)
     {
         $categorySlug = $request->category;
-        $popularProducts = Product::select(
+        $popularProducts = Product::with('images')
+            ->select(
                 'id',
                 'name',
                 'slug',
                 'price',
                 'description',
-                'image',
                 'rating'
             )
             ->where('is_popular', true)
@@ -26,13 +26,13 @@ class HomeController extends Controller
             ->take(4)
             ->get();
         $categories = Category::select('id', 'name', 'slug')->get();
-        $dealProducts = Product::select(
+        $dealProducts = Product::with('images')
+            ->select(
                 'id',
                 'name',
                 'slug',
                 'price',
                 'description',
-                'image',
                 'rating'
             )
             ->when($categorySlug, function ($query) use ($categorySlug) {
