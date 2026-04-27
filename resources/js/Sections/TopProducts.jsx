@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "@inertiajs/react";
 import ProductCard from "../Components/ProductCard";
 
 export default function TopProducts({ products = [] }) {
@@ -12,8 +13,8 @@ export default function TopProducts({ products = [] }) {
           <h2 className="text-3xl md:text-4xl font-bold font-heading text-gray-900 tracking-tight">
             Mainan Terpopuler
           </h2>
-          <a 
-            href="/products" 
+          <Link 
+            href="/products"
             className="group flex items-center gap-2 px-6 py-2.5 md:px-8 md:py-3 border-2 border-primary/20 rounded-full text-gray-800 font-sans font-bold text-sm md:text-base hover:border-primary hover:bg-white transition-all duration-300 shadow-sm hover:shadow-md"
           >
             Lihat Koleksi
@@ -25,7 +26,7 @@ export default function TopProducts({ products = [] }) {
             >
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M17 8l4 4m0 0l-4 4m4-4H3" />
             </svg>
-          </a>
+          </Link>
         </div>
         {isEmpty ? (
           <div className="text-center py-20">
@@ -40,6 +41,7 @@ export default function TopProducts({ products = [] }) {
                 key={product.id}
                 product={{
                   id: product.id,
+                  slug: product.slug, // ✅ penting untuk detail
                   name: product.name || "Produk tanpa nama",
                   description: product.description,
                   price: product.price,
@@ -54,7 +56,6 @@ export default function TopProducts({ products = [] }) {
             ))}
           </div>
         )}
-
       </div>
     </section>
   );

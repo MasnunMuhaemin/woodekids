@@ -2,13 +2,8 @@
 
 use Inertia\Inertia;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ProductController;
 
 Route::get('/', [HomeController::class, 'index']);
-
-Route::get('/products', function () {
-    return Inertia::render('ListProduct');
-});
-
-Route::get('/product-detail', function () {
-    return Inertia::render('ProductDetail');
-});
+Route::get('/products', [ProductController::class, 'index']);
+Route::get('/products/{slug}', [ProductController::class, 'show']);
