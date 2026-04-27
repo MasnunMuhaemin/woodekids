@@ -37,6 +37,11 @@ const formatRupiah = (value) => {
 
 export default function ProductCard({ product }) {
   if (!product) return null;
+
+  const mainImage = product.images && product.images.length > 0 
+    ? `/storage/${product.images[0].image_path}` 
+    : (product.image ? `/storage/${product.image}` : "/images/no-image.png");
+
   return (
     <div className="group flex flex-col h-full bg-white rounded-3xl overflow-hidden transition-all duration-300">      
       <Link href={`/products/${product.slug || ""}`}>
@@ -53,7 +58,7 @@ export default function ProductCard({ product }) {
             </div>
           )}
           <img
-            src={product.image || "/images/no-image.png"}
+            src={mainImage}
             alt={product.name || "Produk"}
             className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
           />

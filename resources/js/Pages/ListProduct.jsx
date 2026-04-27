@@ -146,12 +146,7 @@ export default function ListProduct({ products, categories, filters = {} }) {
                             {products.data.map((product) => (
                                 <ProductCard 
                                   key={product.id} 
-                                  product={{
-                                    ...product,
-                                    image: product.image
-                                      ? `/storage/${product.image}`
-                                      : "/images/no-image.png",
-                                  }}
+                                  product={product}
                                 />
                             ))}
                         </div>

@@ -11,14 +11,13 @@ class ProductController extends Controller
 {
     public function index(Request $request)
     {
-        $products = Product::with('category')
+        $products = Product::with(['category', 'images'])
             ->select(
                 'id',
                 'name',
                 'slug',
                 'price',
                 'description',
-                'image',
                 'rating',
                 'category_id'
             )
@@ -67,11 +66,12 @@ class ProductController extends Controller
 
     public function show($slug)
     {
-        $product = Product::with(['category', 'type', 'additionalItems'])
+        $product = Product::with(['category', 'type', 'additionalItems', 'images'])
             ->where('slug', $slug)
             ->firstOrFail();
 
-        $relatedProducts = Product::where('category_id', $product->category_id)
+        $relatedProducts = Product::with('images')
+            ->where('category_id', $product->category_id)
             ->where('id', '!=', $product->id)
             ->limit(4)
             ->get();

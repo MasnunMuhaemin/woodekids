@@ -21,8 +21,11 @@ export default function ProductDetail({ product, relatedProducts }) {
   if (!product) return null;
 
   // Map backend data to layout structure
-  const imagePath = product.image ? `/storage/${product.image}` : "/images/no-image.png";
-  const thumbnails = [imagePath, imagePath, imagePath];
+  const images = product.images && product.images.length > 0 
+    ? product.images.map(img => `/storage/${img.image_path}`)
+    : ["/images/no-image.png"];
+  
+  const thumbnails = images;
   const badge = product.is_popular ? "Paling Populer" : "Terbaru";
   const badgeClass = product.is_popular ? "bg-secondary" : "bg-primary";
   
@@ -280,10 +283,7 @@ export default function ProductDetail({ product, relatedProducts }) {
                         relatedProducts.map((p) => (
                             <ProductCard 
                                 key={p.id} 
-                                product={{
-                                    ...p,
-                                    image: p.image ? `/storage/${p.image}` : "/images/no-image.png"
-                                }} 
+                                product={p} 
                             />
                         ))
                     ) : (
