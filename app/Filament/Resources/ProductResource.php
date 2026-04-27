@@ -20,10 +20,11 @@ use Filament\Forms\Components\Toggle;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Columns\ImageColumn;
 use Filament\Forms\Components\Rating;
-
+use Filament\Forms\Components\Repeater;
 use Illuminate\Support\Str;
 use Filament\Forms\Get;
 use Filament\Forms\Set;
+use Illuminate\Support\HtmlString;
 
 class ProductResource extends Resource
 {
@@ -92,19 +93,29 @@ class ProductResource extends Resource
                     4 => '⭐⭐⭐⭐',
                     5 => '⭐⭐⭐⭐⭐',
                 ])
-                ->required(),
-
-            FileUpload::make('image')
-                ->label('FotoProduk')
-                ->image()
-                ->imageEditor()
-                ->directory('products')
-                ->disk('public')
-                ->visibility('public')
-                ->acceptedFileTypes(['image/jpeg', 'image/png', 'image/jpg', 'image/webp'])
-                ->maxSize(2048)
                 ->required()
-                ->helperText('Unggah foto produk (Maksimal 2MB, format: jpg, png, webp).'),
+                ->default(fn ($record) => $record?->rating)
+                ->dehydrated(true),
+
+            Repeater::make('images')
+                ->relationship()
+                ->label('Gallery Produk')
+                ->schema([
+                    FileUpload::make('image_path')
+                        ->label('Foto')
+                        ->image()
+                        ->disk('public')
+                        ->directory('products')
+                        ->visibility('public')
+                        ->imageEditor()
+                        ->imagePreviewHeight('150')
+                        ->maxSize(5120)
+                        ->required(),
+                ])
+                ->columns(1)
+                ->defaultItems(0) 
+                ->reorderable()
+                ->collapsible(),
 
             Textarea::make('description')
                 ->label('Deskripsi')
@@ -117,8 +128,28 @@ class ProductResource extends Resource
     {
         return $table
             ->columns([
-                ImageColumn::make('image')
-                    ->label('Foto'),
+                TextColumn::make('images')
+                    ->label('Foto')
+                    ->html()
+                    ->formatStateUsing(function ($record) {
+                        $images = $record->images->take(3);
+
+                        $html = '<div style="display:flex; gap:4px;">';
+
+                        foreach ($images as $img) {
+                            $url = asset('storage/' . $img->image_path);
+
+                            $html .= "<img src='{$url}' width='40' height='40' style='object-fit:cover; border-radius:6px;' />";
+                        }
+
+                        if ($record->images->count() > 3) {
+                            $html .= "<span style='font-size:12px;'>+{$record->images->count()}</span>";
+                        }
+
+                        $html .= '</div>';
+
+                        return new HtmlString($html);
+                    }),
 
                 TextColumn::make('name')
                     ->label('Nama')

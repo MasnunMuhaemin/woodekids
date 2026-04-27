@@ -21,7 +21,6 @@ return new class extends Migration
             $table->boolean('is_popular')->default(false);
             $table->decimal('rating', 2, 1)->default(0);
             $table->text('description')->nullable();
-            $table->string('image')->nullable();
             $table->timestamps();
         });
     }
