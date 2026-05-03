@@ -25,7 +25,7 @@ class AdminPanelProvider extends PanelProvider
         return $panel
             ->default()
             ->id('admin')
-            ->path('admin')
+            ->path('dashboard-secret')
             ->brandName('Woodekidz')
             ->login()
             ->colors([
@@ -51,6 +51,7 @@ class AdminPanelProvider extends PanelProvider
                 SubstituteBindings::class,
                 DisableBladeIconComponents::class,
                 DispatchServingFilamentEvent::class,
+                'throttle:filament-login',
             ])
             ->authMiddleware([
                 Authenticate::class,
