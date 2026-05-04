@@ -162,14 +162,6 @@ export default function ProductDetail({ product, relatedProducts }) {
                     >
                         Informasi Tambahan
                     </button>
-                    <button 
-                        onClick={() => setActiveTab("reviews")}
-                        className={`px-6 md:px-8 py-3 md:py-4 border-b-4 font-black font-heading text-sm md:text-lg uppercase tracking-widest transition-all whitespace-nowrap ${
-                            activeTab === "reviews" ? "border-primary text-gray-900" : "border-transparent text-gray-400 hover:text-gray-900"
-                        }`}
-                    >
-                        Ulasan
-                    </button>
                 </div>
                 
                 <div className="max-w-4xl min-h-[200px]">
@@ -239,19 +231,21 @@ export default function ProductDetail({ product, relatedProducts }) {
                                         const theme = themes[idx % themes.length];
                                         
                                         return (
-                                            <div key={idx} className={`${theme.bg} ${theme.border} border-2 p-8 rounded-[2.5rem] relative overflow-hidden group transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-gray-200`}>
-                                                <div className="relative z-10 flex items-center gap-6">
-                                                    <div className={`${theme.iconBg} ${theme.iconColor} w-16 h-16 shrink-0 rounded-2xl flex items-center justify-center shadow-lg transition-transform duration-500 group-hover:scale-110 group-hover:rotate-6`}>
-                                                        {theme.icon}
+                                            <div key={idx} className={`${theme.bg} ${theme.border} border-2 p-5 md:p-8 rounded-[1.5rem] md:rounded-[2.5rem] relative overflow-hidden group transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-gray-200`}>
+                                                <div className="relative z-10 flex items-center gap-4 md:gap-6">
+                                                    <div className={`${theme.iconBg} ${theme.iconColor} w-12 h-12 md:w-16 md:h-16 shrink-0 rounded-xl md:rounded-2xl flex items-center justify-center shadow-lg transition-transform duration-500 group-hover:scale-110 group-hover:rotate-6`}>
+                                                        <div className="scale-75 md:scale-100 flex items-center justify-center">
+                                                            {theme.icon}
+                                                        </div>
                                                     </div>
                                                     <div className="flex flex-col">
-                                                        <span className="text-[10px] font-black text-gray-400 uppercase tracking-[0.2em] mb-1">Item Ekstra</span>
-                                                        <span className="text-lg md:text-2xl font-black font-heading text-gray-900 group-hover:text-primary transition-colors">{item.name}</span>
+                                                        <span className="text-[8px] md:text-[10px] font-black text-gray-400 uppercase tracking-[0.2em] mb-0.5 md:mb-1">Item Ekstra</span>
+                                                        <span className="text-base md:text-2xl font-black font-heading text-gray-900 group-hover:text-primary transition-colors">{item.name}</span>
                                                     </div>
                                                 </div>
                                                 
                                                 {/* Decorative Circle */}
-                                                <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-white/40 rounded-full blur-2xl group-hover:scale-150 transition-transform duration-700"></div>
+                                                <div className="absolute -bottom-4 -right-4 md:-bottom-6 md:-right-6 w-24 h-24 md:w-32 md:h-32 bg-white/40 rounded-full blur-xl md:blur-2xl group-hover:scale-150 transition-transform duration-700"></div>
                                             </div>
                                         );
                                     })
@@ -262,12 +256,6 @@ export default function ProductDetail({ product, relatedProducts }) {
                                     </div>
                                 )}
                             </div>
-                        </div>
-                    )}
-
-                    {activeTab === "reviews" && (
-                        <div className="text-center py-12 bg-gray-50 rounded-[2rem] animate-in fade-in duration-500">
-                             <p className="text-gray-400 font-sans font-bold">Belum ada ulasan untuk produk ini.</p>
                         </div>
                     )}
                 </div>

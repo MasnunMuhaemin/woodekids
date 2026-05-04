@@ -53,22 +53,10 @@ export default function TopDeals({
           </div>
         ) : (
           <div className="grid grid-cols-2 lg:grid-cols-5 gap-6">
-            <ProductCard 
-              key={products[0].id} 
-              product={{
-                ...products[0],
-                badge: "Diskon",
-                badgeClass: "bg-secondary"
-              }} 
-            />
-            {products.slice(1).map((product) => (
+            {products.map((product) => (
               <ProductCard
                 key={product.id}
-                product={{
-                  ...product,
-                  badge: "Promo",
-                  badgeClass: "bg-primary"
-                }}
+                product={product}
               />
             ))}
           </div>

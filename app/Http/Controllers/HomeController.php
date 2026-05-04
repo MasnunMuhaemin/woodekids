@@ -19,7 +19,8 @@ class HomeController extends Controller
                 'slug',
                 'price',
                 'description',
-                'rating'
+                'rating',
+                'is_popular'
             )
             ->where('is_popular', true)
             ->latest()
@@ -33,7 +34,8 @@ class HomeController extends Controller
                 'slug',
                 'price',
                 'description',
-                'rating'
+                'rating',
+                'is_popular'
             )
             ->when($categorySlug, function ($query) use ($categorySlug) {
                 $query->whereHas('category', function ($q) use ($categorySlug) {

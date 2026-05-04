@@ -39,11 +39,7 @@ export default function TopProducts({ products = [] }) {
             {products.map((product) => (
               <ProductCard
                 key={product.id}
-                product={{
-                  ...product,
-                  badge: "Populer",
-                  badgeClass: "bg-primary",
-                }}
+                product={product}
               />
             ))}
           </div>

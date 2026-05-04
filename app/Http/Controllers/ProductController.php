@@ -19,7 +19,8 @@ class ProductController extends Controller
                 'price',
                 'description',
                 'rating',
-                'category_id'
+                'category_id',
+                'is_popular'
             )
             ->when($request->search, function ($query) use ($request) {
                 $query->where('name', 'like', '%' . $request->search . '%');
