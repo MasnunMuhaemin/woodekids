@@ -43,7 +43,7 @@ export default function ProductCard({ product }) {
     : (product.image ? `/storage/${product.image}` : "/images/no-image.png");
 
   return (
-    <div className="group flex flex-col h-full bg-white rounded-3xl overflow-hidden transition-all duration-300">      
+    <div className="group flex flex-col h-full bg-slate-50 rounded-3xl overflow-hidden transition-all duration-300 border border-slate-100 shadow-sm hover:shadow-xl hover:-translate-y-1 hover:bg-white hover:border-primary/20">      
       <Link href={`/products/${product.slug || ""}`}>
         <div className="relative aspect-square bg-white flex items-center justify-center p-0 mb-4 overflow-hidden rounded-3xl border border-gray-100">
           {product.badge && (
@@ -64,7 +64,7 @@ export default function ProductCard({ product }) {
           />
         </div>
       </Link>
-      <div className="flex-1 px-4 pb-6 flex flex-col bg-white">
+      <div className="flex-1 px-4 pb-6 flex flex-col bg-transparent">
         <Link href={`/products/${product.slug || ""}`}>
           <div className="flex flex-col gap-1 mb-2">            
             <h3 className="text-sm md:text-lg font-bold font-sans text-gray-900 group-hover:text-primary transition-colors mt-2 line-clamp-1">
@@ -78,7 +78,7 @@ export default function ProductCard({ product }) {
         <div className="flex items-center gap-1 md:gap-2 mb-4">
           <StarRating rating={product.rating ?? 0} />
         </div>
-        <div className="mt-auto flex items-center bg-white">
+        <div className="mt-auto flex items-center bg-transparent">
           <span className="text-sm md:text-base lg:text-xl font-black font-sans text-gray-900 whitespace-nowrap">
             {formatRupiah(product.price)}
           </span>
